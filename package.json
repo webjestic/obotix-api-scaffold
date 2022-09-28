@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/webjestic/obotix-mservice-scaffold#readme",
   "devDependencies": {
+    "eslint": "^8.24.0",
     "vitest": "^0.23.4"
   },
   "dependencies": {
