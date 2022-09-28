@@ -1,0 +1,38 @@
+{
+  "name": "obotix-mservice-scaffold",
+  "version": "0.1.0",
+  "description": "obotix-backend scafffold",
+  "keywords": [],
+  "type": "module",
+  "engines": {
+    "node": ">=16.15.1",
+    "npm": ">=8.19.2"
+  },
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node api/index.js",
+    "test": "vitest --run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint . --cache "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webjestic/obotix-mservice-scaffold.git"
+  },
+  "author": "Michael N (webjestic)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webjestic/obotix-mservice-scaffold/issues"
+  },
+  "homepage": "https://github.com/webjestic/obotix-mservice-scaffold#readme",
+  "devDependencies": {
+    "vitest": "^0.23.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
