@@ -7,6 +7,4 @@ export async function run() {
     loadEnvironment()
     await mongo.connect()
     await config.load()
-
-    console.log(`OAPI_DOMAIN=${process.env.OAPI_DOMAIN}`)
 }
