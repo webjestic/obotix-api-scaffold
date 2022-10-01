@@ -3,6 +3,7 @@ import os from 'os'
 
 import * as setup from '././engine/setup.js'
 import * as service from './engine/service.js'
+import appRouter from './app/index.js'
 import fnlib from 'fnlib'
 
 console.log('Platform :', os.platform())
@@ -13,4 +14,5 @@ console.log('Free     :', fnlib.formatBytes(os.freemem()))
 os.hostname
 
 await setup.run()
+service.addRouter(appRouter(service.express.Router()))
 service.run()
