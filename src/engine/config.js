@@ -1,5 +1,5 @@
 
-import { Config } from './config_model.js'
+import { Config } from './models/config_model.js'
 
 export var doc = undefined
 

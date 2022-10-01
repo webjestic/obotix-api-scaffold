@@ -1,6 +1,6 @@
 
 
-import { mongoose } from './mongo.js'
+import { mongoose } from '../mongo.js'
 
 
 // Schemas: https://mongoosejs.com/docs/guide.html
