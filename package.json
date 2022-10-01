@@ -1,5 +1,5 @@
 {
-  "name": "obotix-auth",
+  "name": "obotix-scaffold",
   "version": "0.1.0",
   "description": "obotix-auth server",
   "main": "src/index.js",
