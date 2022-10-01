@@ -11,6 +11,10 @@ import routeHome from './routes/home_route.js'
 var app = undefined
 var log = undefined
 
+var appRouters = []
+var reqMiddleware = []
+var resMiddleware = []
+
 
 function requestMiddleware() {
     app.use(express.json())
@@ -44,4 +48,21 @@ export function run() {
     app.listen(port, () => {
         log.info(`HTTP Server is listening on port ${port}.`)
     })
+}
+
+export function addRouter(router) {
+    appRouters.push(router)
+}
+
+export function addRequestMiddleware(middlware) {
+    reqMiddleware.push(middlware)
+}
+
+export function addResponseMiddleware(middlware) {
+    resMiddleware.push(middlware)
+}
+
+export {
+    app,
+    express
 }
