@@ -1,7 +1,8 @@
-# obotix-
+# obotix-auth
 
 
-## Docker CMD Cheatsheet
+---
+## Docker
 ```bash
 docker build --build-arg env_target=PROD -t obotix-api:0.1.0 .
 docker build -t obotix-api:0.1.0 .
