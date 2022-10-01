@@ -30,8 +30,7 @@ function responseMiddleware() {
 
 function init() {
     app = express()
-    log = Logger.getLogger()
-    log.setNamespace('engine:service')
+    log = Logger.getLogger('engine:service')
 }
 
 export function run() {
