@@ -1,10 +1,10 @@
 
 
-import { mongoose } from '../mongo.js'
+import mongo from '../mongo.js'
 
 
 // Schemas: https://mongoosejs.com/docs/guide.html
-const fileSchema = new mongoose.Schema({
+const fileSchema = new mongo.mongoose.Schema({
     
     title: String,
     active: Boolean,
@@ -16,40 +16,36 @@ const fileSchema = new mongoose.Schema({
     gzip_backups: Boolean
       
 })
-const configSchema = new mongoose.Schema({
-
-    name: {
-        type: String,
-        required: true
+const configSchema = new mongo.mongoose.Schema({
+    CONFIG_ENV: String,
+    APP_NAME: String,
+    ROLES: {
+        basic: Number,
+        moderator: Number,
+        manager: Number,
+        admin: Number
     },
-    env: {
-        APP_NAME: String,
-        CONFIG_ENV: String,
-        ROLES: {
-            basic: Number,
-            moderator: Number,
-            manager: Number,
-            admin: Number
-        },
-        logish: {
-            level: String,
-            performanceTime: Boolean,
-            controllers: [
-                {
-                    name: String,
-                    active: Boolean,
-                    displayOnlyEnvNamespace: Boolean,
-                    displayLevels: [String],
-                    format: String,
-                    useColor: Boolean
-                },
-                {
-                    name: String,
-                    active: Boolean,
-                    files: [fileSchema]
-                }
-            ]
-        }
+    logish: {
+        level: String,
+        performanceTime: Boolean,
+        controllers: [
+            {
+                name: String,
+                active: Boolean,
+                displayOnlyEnvNamespace: Boolean,
+                displayLevels: [String],
+                format: String,
+                useColor: Boolean
+            },
+            {
+                name: String,
+                active: Boolean,
+                files: [fileSchema]
+            }
+        ]
+    },
+    redis: {
+        enabled: Boolean
     }
 })
 
@@ -66,4 +62,4 @@ whitelistsSchema.methods.generateAuthToken = function() {
 // Dev Note:
 // by default mongoose model converts ('Config') to lowercase and adds plural 'configs'
 // to identify the collection in the db.
-export const Config = mongoose.model('Config', configSchema)
+export const Config = mongo.mongoose.model('Config', configSchema)

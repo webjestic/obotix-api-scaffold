@@ -20,6 +20,6 @@ export default (router) => {
 
 
 
-    log.debug('Service App Module Loaded')
+    log.debug('App Module Loaded')
     return router
 }

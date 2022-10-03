@@ -32,6 +32,6 @@ export function readyState() {
     return mongoose.connection.readyState
 }
 
-export {
+export default {
     mongoose
 }

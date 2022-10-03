@@ -21,15 +21,27 @@ function requestMiddleware() {
     app.use(express.urlencoded({ extended: false }))
 
     app.use(analtics)
+
+    updateAppUse(reqMiddleware)
 }
 
 function routes() {
     // eslint-disable-next-line no-useless-escape
     app.use('\/$', routeHome)
+
+    updateAppUse(appRouters)
 }
 
 function responseMiddleware() {
+    updateAppUse(resMiddleware)
     app.use(send)
+}
+
+function updateAppUse(array) {
+    if (array.length > 0 ) {
+        for (let fn of array) 
+            app.use(fn)
+    }
 }
 
 function init() {
