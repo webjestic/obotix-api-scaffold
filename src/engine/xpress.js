@@ -15,7 +15,6 @@ var appRouters = []
 var reqMiddleware = []
 var resMiddleware = []
 
-
 function requestMiddleware() {
     app.use(express.json())
     app.use(express.urlencoded({ extended: false }))
