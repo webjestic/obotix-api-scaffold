@@ -8,6 +8,7 @@ var router = express.Router()
 // eslint-disable-next-line no-useless-escape
 router.get('\/$', (req, res, next) => {
 
+    controller.headers(res)
     res.body = controller.body()
     res.status(200)
     next()
