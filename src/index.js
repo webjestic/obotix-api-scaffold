@@ -1,10 +1,23 @@
 
+
 import obotix from 'obotix'
-
 await obotix.init()
-const log = obotix.logger.getLogger('app:index')
-obotix.logger.setLogLevel('trace')
 
-obotix.listen( () => {
-    log.info(`Service Listening on ${process.env.OBOTIX_PORT}`)
+
+const app = obotix.getApp()
+const log = obotix.getLogger('main:index')
+
+app.use(obotix.addUrlEncodedMiddleware())
+app.use(obotix.addHealthzRouter())
+
+// add routers here
+
+app.use(obotix.addErrorHandlingMiddleware())
+
+
+const port = process.env.OAPI_PORT || 3000
+app.listen(port, () => {
+    log.info(`HTTP Server is listening on port ${port}. PID:${process.pid}`)
 })
+
+
