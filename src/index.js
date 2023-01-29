@@ -1,23 +1,28 @@
+/**
+ * 
+ */
 
+import obotix from '../pkgs/obotix/index.js'
+import fs from 'fs'
 
-import obotix from 'obotix'
 await obotix.init()
 
-
+const log = obotix.getLogger('src:index')
 const app = obotix.getApp()
-const log = obotix.getLogger('main:index')
 
-app.use(obotix.addUrlEncodedMiddleware())
-app.use(obotix.addHealthzRouter())
+obotix.addMiddleware('stats')
 
-// add routers here
+obotix.addRoute('/', 'healthz')
+obotix.addRoute('/node', 'stats')
+obotix.addRoute('/node', 'uuid')
 
-app.use(obotix.addErrorHandlingMiddleware())
+obotix.addMiddleware('notFound')
+obotix.addMiddleware('internalError')
 
 
 const port = process.env.OAPI_PORT || 3000
 app.listen(port, () => {
-    log.info(`HTTP Server is listening on port ${port}. PID:${process.pid}`)
+    obotix.sys.displayResources(log)
+    let pckg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+    log.info(`${pckg.name} ${pckg.version} is listening on port ${port}. PID: ${process.pid}`)
 })
-
-
