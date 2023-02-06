@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "express-async-errors": "^3.1.1",
-    "obotix": "^0.3.12"
+    "obotix": "^0.3.13"
   }
 }
