@@ -9,6 +9,13 @@
       "accesslog": {
         "enabled": true
       }
+    },
+    "roles": {
+      "guest": 0,
+      "member": 1,
+      "moderator": 2,
+      "manager": 4,
+      "admin": 8
     }
   },
   "logish": {
@@ -27,7 +34,7 @@
           "error",
           "fatal"
         ],
-        "format": "%level %namespace %entry %performance",
+        "format": "%datetime %level %namespace %entry %performance",
         "useColor": true
       },
       {
