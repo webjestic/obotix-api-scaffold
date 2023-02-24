@@ -1,6 +1,6 @@
 {
   "name": "obotix-scaffold",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "obotix-auth server",
   "main": "src/index.js",
   "type": "module",
@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "express-async-errors": "^3.1.1",
-    "obotix": "^0.5.0"
+    "obotix": "^0.5.1"
   }
 }
