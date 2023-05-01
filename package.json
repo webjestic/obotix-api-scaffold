@@ -1,7 +1,7 @@
 {
-  "name": "ai-brain-train",
-  "version": "0.1.0",
-  "description": "ai-brain-train",
+  "name": "obotix-scaffold",
+  "version": "0.2.3",
+  "description": "obotix-scaffold server",
   "main": "src/index.js",
   "type": "module",
   "engines": {
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webjestic/ai-brain-train.git"
+    "url": "git+https://github.com/webjestic/obotix-scaffold.git"
   },
   "author": "Michael N (webjestic)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/webjestic/ai-brain-train/issues"
+    "url": "https://github.com/webjestic/obotix-scaffold/issues"
   },
-  "homepage": "https://github.com/webjestic/ai-brain-train#readme",
+  "homepage": "https://github.com/webjestic/obotix-scaffold#readme",
   "devDependencies": {
     "eslint": "^8.24.0",
     "vitest": "^0.23.4"
